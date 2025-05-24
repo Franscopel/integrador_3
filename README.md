@@ -1,28 +1,34 @@
-# Django MongoDB Backend - Project Template
+# Projeto de Dicionário de termos de informática.
 
-This is a Django project starter template for the Django MongoDB Backend.
-In order to use it with your version of Django: 
+Esse é projeto final da disciplina Projeto Integrador em computação III da Univesp.
+- Contempla um processo de extração de dados de um dicionário de termos de informática em pdf;
+- A criação e conexão com um banco de dados na cloud mongodb;
+- Disponibilização de imagem da estrutura do projeto na cloud do dockerhub;
+- Integração Contínua e Deploy Contínuo com o Github utilizando Github workflows;
+- Uma página WEB para consulta dos termo que utiliza Javascript conectado através do Framework Django.
 
-- Find your Django version. To do so from the command line, make sure you
-  have Django installed and run:
+
+## Como Executar o Projeto
+
+- É necessário baixar a imagem do dockerhub:
 
 ```bash
-django-admin --version
->> 5.0
+docker pull franscopel/django:v5
 ```
 
-## Create the Django project
-
-From your shell, run the following command to create a new Django project
-replacing the `{{ project_name }}` and `{{ version }}` sections. 
+- É necessário baixar a versão do projeto do github
 
 ```bash
-django-admin startproject {{ project_name }} --template https://github.com/mongodb-labs/django-mongodb-project/archive/refs/heads/{{ version }}.x.zip
+git pull git@github.com:Franscopel/integrador_3.git
 ```
 
-For a project named `5_0_example` that runs on `django==5.0.*`
-the command would look like this:
+- É necessário criar na raíz do projeto os seguintes variáveis de ambiente.
+MONGO_URI
+MONGO_DB_NAME
+MONGO_COLLECTION
 
+
+- É necessário executar via terminal na raíz do projeto, o comando:
 ```bash
-django-admin startproject 5_0_example --template https://github.com/mongodb-labs/django-mongodb-project/archive/refs/heads/5.0.x.zip
+python manage.py runserver
 ```
